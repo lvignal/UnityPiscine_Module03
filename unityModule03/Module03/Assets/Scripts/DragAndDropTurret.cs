@@ -1,4 +1,5 @@
 using Module03.Base;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ namespace Module03.Turret
     {
         [SerializeField] private GameObject _turretPrefab;
         [SerializeField] private int _turretCostInEnergyPoints;
+        [SerializeField] private TextMeshProUGUI _turretInfosText;
         
         private Image _image;
         private GameObject _clone;
@@ -20,6 +22,10 @@ namespace Module03.Turret
             _image = GetComponent<Image>();
             _baseController = FindObjectOfType<BaseController>();
             _baseController.OnEnergyPointsChanged += EnableTurretPurchase;
+            
+            // initialize the turret stats
+            TurretController turretController = _turretPrefab.GetComponent<TurretController>();
+            _turretInfosText.text = _turretCostInEnergyPoints + "\n" + (1 + turretController.BasicsDamages) + "\n" + turretController.FireRate;
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -34,11 +40,17 @@ namespace Module03.Turret
 
         public void OnDrag(PointerEventData eventData)
         {
+            if (!_canPurchaseTurret)
+                return;
+            
             _clone.transform.position = Input.mousePosition;
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
+            if (!_canPurchaseTurret)
+                return;
+            
             Destroy(_clone);
             
             // launch a ray from the mouse position to detect if the mouse is over a turret base

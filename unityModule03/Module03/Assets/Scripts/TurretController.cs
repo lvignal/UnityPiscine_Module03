@@ -15,6 +15,9 @@ namespace Module03.Turret
         private float _timer;
         private float _bulletSpeed = 10.0f;
         
+        public float BasicsDamages => _basicsDamages;
+        public float FireRate => _fireRate;
+        
         private void Update()
         {
             if (_detectionZone.EnemiesInZone.Count == 0)
@@ -22,14 +25,12 @@ namespace Module03.Turret
             
             TargetClosestEnemy();
             
-            if (_enemyTargeted != null)
+            _timer += Time.deltaTime;
+            if (_timer >= _fireRate)
             {
-                _timer += Time.deltaTime;
-                if (_timer >= _fireRate)
-                {
+                if (_enemyTargeted != null)
                     Fire();
-                    _timer = 0.0f;
-                }
+                _timer = 0.0f;
             }
         }
 

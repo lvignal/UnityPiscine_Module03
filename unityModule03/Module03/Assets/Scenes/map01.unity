@@ -672,6 +672,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _baseHPText: {fileID: 1787482130}
   _baseEnergyText: {fileID: 1755744233}
+  _healthPoints: 5
+  _energyPoints: 80
 --- !u!50 &1164649312
 Rigidbody2D:
   serializedVersion: 4
@@ -4340,7 +4342,7 @@ MonoBehaviour:
   _enemyPrefab: {fileID: 6807097976596347751, guid: e65341be8a5b69ee18d6330146349371, type: 3}
   _spawnPosition: {x: 0.49, y: 4.5, z: 0}
   _spawnRate: 2.5
-  _maxNumberOfSpawnedEnemies: 20
+  _maxNumberOfSpawnedEnemies: 15
   _enemyHP: 3
   _enemySpeed: 1
   _waypoints:

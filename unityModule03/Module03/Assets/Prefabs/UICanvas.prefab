@@ -195,6 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _turretPrefab: {fileID: 3021151808561328038, guid: 6f9b25e20ec33a7429dacc89d3560a7d, type: 3}
   _turretCostInEnergyPoints: 50
+  _turretInfosText: {fileID: 2977627189969241027}
 --- !u!1 &827517586963180884
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,6 +929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _turretPrefab: {fileID: 824079410778895524, guid: 4a2ae60dd73dbea6ea5542fd5a49a413, type: 3}
   _turretCostInEnergyPoints: 80
+  _turretInfosText: {fileID: 1911350403764915674}
 --- !u!1 &5829880682073993797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,6 +1154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _turretPrefab: {fileID: 6412823093834900346, guid: d2a1c379c94f416efae414e057e72ddd, type: 3}
   _turretCostInEnergyPoints: 100
+  _turretInfosText: {fileID: 5020226902842695292}
 --- !u!1 &7043055065206398148
 GameObject:
   m_ObjectHideFlags: 0

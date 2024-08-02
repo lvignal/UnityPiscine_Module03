@@ -15,7 +15,7 @@ namespace Module03.Enemy
         public Action OnDestroyed;
         public Action OnKilledByBullet;
         
-        public void Initialize(int healthPoints, float speed, Transform[] waypoints)
+        public void Initialize(float healthPoints, float speed, Transform[] waypoints)
         {
             _healthPoints = healthPoints;
             _speed = speed;
@@ -43,11 +43,10 @@ namespace Module03.Enemy
             
             float turretDamage = other.gameObject.GetComponent<BulletController>().TurretDamage;
             _healthPoints -= (turretDamage + 1);
-            Debug.Log("Enemy HP = " + _healthPoints);
             Destroy(other.gameObject);
+            
             if (_healthPoints <= 0)
             {
-                Debug.Log("Enemy killed !");
                 Destroy(gameObject);
                 OnKilledByBullet?.Invoke();
             }

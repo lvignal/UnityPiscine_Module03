@@ -10,7 +10,7 @@ namespace Module03.Enemy
         [SerializeField] private Vector3 _spawnPosition;
         [SerializeField] private float _spawnRate;
         [SerializeField] private int _maxNumberOfSpawnedEnemies = 20;
-        [SerializeField] private int _enemyHP = 3;
+        [SerializeField] private float _enemyHP = 3;
         [SerializeField] private float _enemySpeed = 1f;
         [SerializeField] private Transform[] _waypoints;
         

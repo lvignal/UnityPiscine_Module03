@@ -1999,7 +1999,7 @@ MonoBehaviour:
   _spawnPosition: {x: -2.5, y: 4.5, z: 0}
   _spawnRate: 2
   _maxNumberOfSpawnedEnemies: 25
-  _enemyHP: 4
+  _enemyHP: 4.5
   _enemySpeed: 1.5
   _waypoints:
   - {fileID: 1417051403}

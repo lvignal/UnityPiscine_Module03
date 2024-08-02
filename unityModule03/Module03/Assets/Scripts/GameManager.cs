@@ -13,7 +13,8 @@ namespace Module03
         [SerializeField] private PauseMenu _pauseMenu;
 
         private EndLevelScreen _endLevelScreen;
-        private int _currentLevel = 1;
+        private static int _currentLevel = 1;
+        
         private bool _isCurrentLevelWon = false;
         private int _numberOfLevels = 2;
 
@@ -100,9 +101,12 @@ namespace Module03
         private void GoToNextLevel()
         {
             _currentLevel++;
-            
+
             if (_currentLevel > _numberOfLevels)
+            {
+                _currentLevel = 1;
                 SceneManager.LoadScene("EndGame");
+            }
             else
                 SceneManager.LoadScene(_currentLevel);
         }
