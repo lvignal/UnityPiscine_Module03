@@ -24,7 +24,7 @@ namespace Module03.Screens
             _enemiesKilled.text = $"Enemies killed : {enemiesKilled}";
             
             if (isLastLevel)
-                _buttonText.text = "End game";
+                _buttonText.text = hasWon? "End game" : "Retry";
             else
                 _buttonText.text = hasWon ? "Next level" : "Retry";
         }
